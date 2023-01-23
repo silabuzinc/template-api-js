@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -r esm src/index.js",
-    "start": "node -r esm src/index.js"
+    "dev": "nodemon -r esm src/app.js",
+    "start": "node -r esm src/app.js"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,11 @@
     "cors": "^2.8.5",
     "esm": "^3.2.25",
     "express": "^4.18.1",
-    "prisma": "^4.3.1"
+    "mongoose": "6.8.4",
+    "prisma": "^4.3.1",
+    "socket.io": "^4.5.4",
+    "keycloak-connect": "20.0.3",
+    "express-session": "1.17.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"

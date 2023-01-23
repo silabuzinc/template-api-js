@@ -1,5 +1,18 @@
-import { app } from "./app";
+import mongoose from "mongoose";
 
-const port = 6005;
 
-app.listen(port, () => console.log(`Server init in localhost:${port}`));
+const connect = () => {
+ mongoose.Promise = global.Promise;
+ mongoose.connect("mongodb://root:root@localhost:27017",
+   {
+     useNewUrlParser: true,
+     useUnifiedTopology: true,
+   }
+ );
+ const db = mongoose.connection;
+ db.on("error", (error) => console.error(error));
+ db.once("open", () => console.log("Connected to Database"));
+};
+
+
+export default connect;
